@@ -9,10 +9,16 @@ app.http('getCarById', {
     methods: ['DELETE'],
     route:'cars/{carID}',
     handler: async (request, context) => {
-        id = request.params.carID
+
+    id = req.params.id;
+    index = cars.findIndex(car => car.id === id);
+    cars.splice(index, 1);
+
+
 
         return{
             status:200,
+            body:  JSON.stringify(parsedData) ,
             body:id
         }
     }

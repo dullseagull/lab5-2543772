@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carList = document.getElementById('carList');
     cars = [];
     loadCarsBtn.addEventListener('click', () => {
-        fetch('api/getCars')
+        fetch('api/getCar')
             .then(response => response.json())
             .then(data => {
                 cars = data;
@@ -60,7 +60,7 @@ carForm.addEventListener('submit', event => {
 // Function to remove a car
 function removeCar(index) {
     const carId = cars[index].id;
-    fetch(`api/getCarById/${carId}`, {
+    fetch(`api/delete/${carId}`, {
         method: 'DELETE'
     })
         .then(response => response.json())
