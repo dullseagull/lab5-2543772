@@ -4,7 +4,7 @@ const path = require('path');
 
 const unparsedPath = path.resolve(__dirname,"cars.json");
 
-app.http('getCars', {
+app.http('getCar', {
     methods: ['GET'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
