@@ -5,7 +5,7 @@ const { app } = require('@azure/functions');
 const jsonFilePath = path.resolve(__dirname, 'cars.json');
 
 
-app.http('getCarById', {
+app.http('delete', {
     methods: ['DELETE'],
     route:'cars/{carID}',
     handler: async (request, context) => {
